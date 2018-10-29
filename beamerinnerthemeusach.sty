@@ -1,0 +1,35 @@
+\mode<presentation>
+
+% Fondo de diapos
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+    	% Limits for the picture
+    	\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+		% Cuadros azul y naranjo arriba a la izquierda    	
+	    \fill[color=usachBlue] (0,0.99\paperheight) rectangle (0.25\paperwidth,\paperheight);
+	    \fill[color=usachOrange] (0.25\paperwidth,0.99\paperheight) rectangle (\the\paperwidth, \the\paperheight);
+	    
+	    % Cuadro naranjo abajo
+	    \fill[color=usachOrange] (0,0) rectangle (\paperwidth, 0.01\paperheight);
+   	\end{tikzpicture}
+}
+
+% El título
+\defbeamertemplate*{title page}{usach}[1][]{
+  \vskip1.5cm
+  \begin{beamercolorbox}[wd=12cm,center,sep=8pt,#1]{title page header}
+    \usebeamerfont{title}\inserttitle\par
+  \end{beamercolorbox}
+  \vskip1cm
+  \begin{beamercolorbox}[wd=12cm,center,#1]{author}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+  \vskip0.5cm
+  \begin{beamercolorbox}[wd=12cm,center,#1]{date}
+    \usebeamerfont{author}\insertdate
+  \end{beamercolorbox}
+  \vfill
+}
+
+\mode<all>

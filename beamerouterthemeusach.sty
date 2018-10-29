@@ -1,0 +1,70 @@
+\mode<presentation>
+
+\newdimen\beamerHeadheight
+\newdimen\logowidth
+\logowidth=0.25\paperwidth
+\beamerHeadheight=0.15\paperheight
+
+% Frame title
+\defbeamertemplate*{frametitle}{usach}{
+	% Desplazamiento para el título
+	\vskip -\beamerHeadheight
+
+	% Comenzando comandos raros
+	\makeatletter
+	
+	% Ancho posible del título: texto - márgenes
+    \@tempdima=\textwidth%
+	\advance\@tempdima by\beamer@leftmargin%
+	\advance\@tempdima by\beamer@rightmargin%
+	
+	% Caja que contiene el título, desplazada por el logo
+	\begin{beamercolorbox}[sep=0.3cm, leftskip=\the\logowidth, wd=\the\@tempdima]{frametitle}
+		{\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle\par}%
+	    {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle\par}
+	\end{beamercolorbox}
+	
+	\makeatother
+	% Espaciado adicional
+	\vbox{}%
+	\vskip-1em%
+	\vfil
+}
+
+% Header de la cosa
+\defbeamertemplate*{headline}{usach}
+{%
+	% Inserta el logo en su cajita
+	\begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+		\hbox to 0.25\paperwidth{
+			\hss\vbox to .15\paperheight{%
+				\vss
+				\hbox{\color{fg}\insertlogo}
+				\vss
+			}\hss
+        }%
+	\end{beamercolorbox}
+}
+
+% Vaciar la barra lateral izquierda, por si acaso
+\setbeamertemplate{sidebar left}{}
+
+% Este template es el que pone el logo a la derecha, así que vacío
+\setbeamertemplate{sidebar right}{}
+
+% Coloca el número de página abajo a la derecha, encima de la línea de base
+\defbeamertemplate*{footline}{usach}{
+	\hfill
+	% Estas dos configuraciones son hechas por la versión 
+	% con * de \usebeamertemplate
+	%\usebeamercolor[fg]{page number in head/foot}
+	%\usebeamerfont{page number in head/foot}
+	% Esto es hecho por \setbeamertemplate+\usebeamertemplate
+	%\insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip5pt
+	\setbeamertemplate{page number in head/foot}[totalframenumber]
+	\usebeamertemplate*{page number in head/foot}
+	% Espacio para ajustar la cosa
+	\kern1em\vskip 0.02\paperheight%5pt
+}
+
+\mode<all>
