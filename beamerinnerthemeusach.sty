@@ -20,6 +20,11 @@
   \vskip1.5cm
   \begin{beamercolorbox}[wd=12cm,center,sep=8pt,#1]{title page header}
     \usebeamerfont{title}\inserttitle\par
+    \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
   \end{beamercolorbox}
   \vskip1cm
   \begin{beamercolorbox}[wd=12cm,center,#1]{author}

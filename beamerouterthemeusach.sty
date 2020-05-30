@@ -54,18 +54,36 @@
 \setbeamertemplate{sidebar right}{}
 
 % Coloca el número de página abajo a la derecha, encima de la línea de base
-\defbeamertemplate*{footline}{usach}{
-	\hfill
-	% Estas dos configuraciones son hechas por la versión 
-	% con * de \usebeamertemplate
-	%\usebeamercolor[fg]{page number in head/foot}
-	%\usebeamerfont{page number in head/foot}
-	% Esto es hecho por \setbeamertemplate+\usebeamertemplate
-	%\insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip5pt
-	\setbeamertemplate{page number in head/foot}[totalframenumber]
-	\usebeamertemplate*{page number in head/foot}
-	% Espacio para ajustar la cosa
-	\kern1em\vskip 0.02\paperheight%5pt
+%\defbeamertemplate*{footline}{usach}{
+%	\hfill
+%	% Estas dos configuraciones son hechas por la versión 
+%	% con * de \usebeamertemplate
+%	%\usebeamercolor[fg]{page number in head/foot}
+%	%\usebeamerfont{page number in head/foot}
+%	% Esto es hecho por \setbeamertemplate+\usebeamertemplate
+%	%\insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip5pt
+%	\setbeamertemplate{page number in head/foot}[totalframenumber]
+%	\usebeamertemplate*{page number in head/foot}
+%	% Espacio para ajustar la cosa
+%	\kern1em\vskip 0.02\paperheight%5pt
+%}
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\defbeamertemplate*{footline}{usach}
+{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate%\hspace*{2em}
+  \end{beamercolorbox}}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    %\usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \usebeamerfont{title in head/foot}\insertshorttitle{}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+    \usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}\hspace*{1cm}
+  \end{beamercolorbox}%
+  \vskip1ex%
 }
 
 \mode<all>

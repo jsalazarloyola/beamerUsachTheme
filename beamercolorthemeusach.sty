@@ -1,12 +1,12 @@
 \mode<presentation>
 
 % Colores básicos USACH
-\definecolor{usachOrange}{rgb}{1, 0.451, 0.098}
-\definecolor{usachBlue}{rgb}{0, 0.322, 0.8}
-\definecolor{usachGray}{rgb}{0.694, 0.701, 0.705}
+\definecolor{usachOrange}{RGB}{234,118,0}
+\definecolor{usachBlue}{RGB}{0, 47, 108}
+\definecolor{usachGray}{RGB}{177,177,177}
 
 % Colores secundarios USACH
-\definecolor{usachWine}{rgb}{0.484, 0.145, 0.160}
+\definecolor{usachWine}{RGB}{124,37,41}
 
 % Colores de los elementos
 \setbeamercolor*{title page header}{fg=usachBlue}
@@ -30,5 +30,18 @@
 \setbeamercolor*{itemize item}{fg=usachWine}
 
 \setbeamercolor*{block title}{fg=usachOrange}
+
+\setbeamercolor*{footline}{fg=usachGray}
+
+\setbeamercolor*{author in head/foot}{parent=footline}
+\setbeamercolor*{title in head/foot}{parent=footline}
+\setbeamercolor*{date in head/foot}{parent=footline}
+\setbeamercolor*{page number in head/foot}{parent=footline}
+
+\setbeamercolor*{section in head/foot}{parent=footline}
+\setbeamercolor*{subsection in head/foot}{parent=footline}
+
+\setbeamercolor*{block title}{fg=white, bg=usachBlue}
+\setbeamercolor*{block body}{bg=usachGray!10}
 
 \mode<all>
