@@ -8,6 +8,9 @@
 % Colores secundarios USACH
 \definecolor{usachWine}{RGB}{124,37,41}
 
+%\colorlet{exampleGreen}{green!50!black}
+\definecolor{exampleColor}{RGB}{37,74,93}
+
 % Colores de los elementos
 \setbeamercolor*{title page header}{fg=usachBlue}
 \setbeamercolor*{author}{fg=usachGray}
@@ -29,8 +32,6 @@
 \setbeamercolor*{enumerate item}{fg=usachWine}
 \setbeamercolor*{itemize item}{fg=usachWine}
 
-\setbeamercolor*{block title}{fg=usachOrange}
-
 \setbeamercolor*{footline}{fg=usachGray}
 
 \setbeamercolor*{author in head/foot}{parent=footline}
@@ -44,4 +45,9 @@
 \setbeamercolor*{block title}{fg=white, bg=usachBlue}
 \setbeamercolor*{block body}{bg=usachGray!10}
 
+\setbeamercolor*{block title alerted}{fg=white, bg=usachWine}
+\setbeamercolor*{block body alerted}{fg=usachWine, bg=usachGray!10}
+
+\setbeamercolor*{block title example}{fg=white, bg=exampleColor}
+\setbeamercolor*{block body example}{fg=exampleColor, bg=usachGray!10}
 \mode<all>
