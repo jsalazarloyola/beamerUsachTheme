@@ -1,5 +1,5 @@
 # beamerUsachTheme
-Tema para Beamer siguiendo los lineamientos de la USACH, obtenidos del [Manual de Normas Gráficas](https://guiaweb.usach.cl/sites/default/files/manual_de_normas_graficas_universidad_de_santiago_de_chile_2016.pdf)
+Tema para Beamer siguiendo los lineamientos de la USACH, obtenidos del [Manual de Normas Gráficas](https://guiaweb.usach.cl/sites/default/files/IMAGEN%20USACH%20-%20Manual%20de%20Normas%20Gr%C3%A1ficas.pdf)
 
 TODO:
 - Instrucciones de instalación. Por ahora, funciona dejándolo en el mismo directorio que el archivo a crear. Se carga con `\usetheme{usach}`
