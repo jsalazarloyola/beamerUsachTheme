@@ -18,7 +18,15 @@
 % El título
 \defbeamertemplate*{title page}{usach}[1][]{
   \vskip1.5cm
-  \begin{beamercolorbox}[wd=12cm,center,sep=8pt,#1]{title page header}
+  \makeatletter
+  
+  % Ancho posible del título: texto - márgenes
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  
+  
+  \begin{beamercolorbox}[wd=\the\@tempdima, center, sep=8pt,#1]{title page header}
     \usebeamerfont{title}\inserttitle\par
     \ifx\insertsubtitle\@empty%
       \else%
@@ -27,18 +35,20 @@
       \fi%     
   \end{beamercolorbox}
   \vskip1cm
-  \begin{beamercolorbox}[wd=12cm,center,#1]{author}
+  \begin{beamercolorbox}[wd=\the\@tempdima, center, #1]{author}
     \usebeamerfont{author}\insertauthor
   \end{beamercolorbox}
   \vskip0.3cm
-  \begin{beamercolorbox}[wd=12cm,center,#1]{institute}
+  \begin{beamercolorbox}[wd=\the\@tempdima, center, #1]{institute}
     \usebeamerfont{institute}\insertinstitute
   \end{beamercolorbox}
   \vskip0.5cm
-  \begin{beamercolorbox}[wd=12cm,center,#1]{date}
+  \begin{beamercolorbox}[wd=\the\@tempdima, center, #1]{date}
     \usebeamerfont{author}\insertdate
   \end{beamercolorbox}
   \vfill
+  
+  \makeatother
 }
 
 

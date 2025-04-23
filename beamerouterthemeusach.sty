@@ -37,13 +37,17 @@
 {%
 	% Inserta el logo en su cajita
 	\begin{beamercolorbox}[wd=\paperwidth]{frametitle}
-		\hbox to 0.25\paperwidth{
-			\hss\vbox to .15\paperheight{%
-				\vss
-				\hbox{\color{fg}\insertlogo}
-				\vss
-			}\hss
-        }%
+		% Esta versión es más clara que la versión puro TeX de más abajo :'v y
+		% parece alinear mejor verticalmente, por alguna razón (no está probado con
+		% encabezados grandes)
+		\makebox[0.25\paperwidth][c]{\color{fg}\insertlogo}
+%		\hbox to 0.25\paperwidth{
+%			\hss\vbox to .15\paperheight{%
+%				\vss
+%				\hbox{\color{fg}\insertlogo}
+%				\vss
+%			}\hss
+%        }%
 	\end{beamercolorbox}
 }
 
